@@ -7,7 +7,7 @@ import ua.tarvic.javadocker.models.Car;
 
 import java.util.List;
 
-@Service("CarService.hw3.v1")
+@Service("CarService.v1")
 @AllArgsConstructor
 public class CarServiceImpl implements CarService {
     private CarDAO carDAO;

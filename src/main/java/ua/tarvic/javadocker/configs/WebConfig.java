@@ -19,10 +19,15 @@ public class WebConfig implements WebMvcConfigurer {
         // https://localhost:8080/av/img.jpg
         registry
                 .addResourceHandler(
+                        "/av/*.gif",
                         "/av/*/*.gif",
                         "/av/*.png",
                         "/av/*/*.png",
-                        "/av/*/*.jpeg")
+                        "/av/*.jpeg",
+                        "/av/*/*.jpeg",
+                        "/av/*.jpg",
+                        "/av/*/*.jpg"
+                )
                 .addResourceLocations(path);
     }
 }

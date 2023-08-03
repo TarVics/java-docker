@@ -27,7 +27,7 @@ public class UserController {
     private final UserUtil userUtil;
 
     public UserController(
-        @Qualifier("hw3.UserService.v1")
+        @Qualifier("UserService.v1")
         UserService userService,
         UserUtil userUtil
     ) {

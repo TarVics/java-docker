@@ -27,13 +27,6 @@ Level3 - model producer (для endpoint /cars)
 
 */
 
-/*
-Беремо проєкт з автомобілями, котрий робили до цього моменту
-1. Виносимо логіку у сервісний прошарок.
-2. Додаємо відправку листа на пошту з повідомленням реєстрації нової автівки
-*/
-
-
 import com.fasterxml.jackson.annotation.JsonView;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -41,13 +34,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 import ua.tarvic.javadocker.models.Car;
 import ua.tarvic.javadocker.models.dto.CarDTO;
 import ua.tarvic.javadocker.models.views.Views;
 import ua.tarvic.javadocker.services.CarService;
 import ua.tarvic.javadocker.utils.CarUtil;
 
-import java.util.List;
 
 @RestController
 @RequestMapping(value = "/cars")
@@ -56,7 +50,7 @@ public class CarController {
     private final CarUtil carUtil;
 
     public CarController(
-            @Qualifier("CarService.hw3.v1")
+            @Qualifier("CarService.v1")
             CarService carService,
             CarUtil carUtil
     ) {

@@ -9,12 +9,11 @@ import java.util.List;
 import ua.tarvic.javadocker.models.User;
 import ua.tarvic.javadocker.dao.UserDAO;
 
-@Service("hw3.UserService.v1")
+@Service("UserService.v1")
 @AllArgsConstructor
 public class UserServiceImpl implements UserService {
 
     private UserDAO userDAO;
-    private MailService mailService;
 
     public List<User> findAll() {
         return userDAO.findAll();
@@ -25,9 +24,7 @@ public class UserServiceImpl implements UserService {
     }
 
     public User save(User user, File... files) {
-        User saved = userDAO.save(user);
-        mailService.sendEmailToUser(saved, files);
-        return saved;
+        return userDAO.save(user);
     }
 
     public Boolean deleteById(int userId) {
